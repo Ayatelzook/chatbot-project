@@ -1,0 +1,261 @@
+{
+  "intents": [
+    {
+      "tag": "Mass_Air_Flow_Problem",
+      "patterns": [
+        "What does the air flow problem mean?",
+        "Can you explain the Mass or Volume Air Flow issue?",
+        "What should I do about the air flow circuit problem?",
+        "How can I fix the mass air flow notification?"
+      ],
+      "responses": [
+        "This means there's a problem with the air flow in your car. You should check the air filter.",
+        "Make sure the mass air flow sensor isn't dirty. Clean or replace it if needed.",
+        "Check that all hoses connected to the air intake are tight and not leaking.",
+        "If you're unsure, consider taking your car to a mechanic."
+      ]
+    },
+    {
+      "tag": "Intake_Air_Temperature_Problem",
+      "patterns": [
+        "What does the air temperature problem mean?",
+        "Can you explain the Intake Air Temperature issue?",
+        "What should I do about the air temperature circuit problem?",
+        "How can I resolve the intake air temperature notification?"
+      ],
+      "responses": [
+        "This indicates a problem with the air temperature sensor. It might be faulty.",
+        "Check the sensor and make sure the wiring is secure.",
+        "If the sensor is damaged, it may need to be replaced.",
+        "Consult a mechanic if you're not comfortable checking it yourself."
+      ]
+    },
+    {
+      "tag": "Engine_Coolant_Temperature_Intermittent",
+      "patterns": [
+        "What does the coolant temperature problem mean?",
+        "Can you explain the Engine Coolant Temperature issue?",
+        "What should I do about the coolant temperature circuit problem?",
+        "How can I fix the coolant temperature notification?",
+        "coolant_temperature problem"
+      ],
+      "responses": [
+        "This means there could be a problem with the coolant temperature sensor.",
+        "Check the sensor to see if it's working properly.",
+        "Make sure your coolant levels are okay; low coolant can cause issues.",
+        "If you're unsure, it's best to visit a mechanic for help."
+      ]
+    },
+    {
+      "tag": "Engine_Oil_Temperature_Intermittent",
+      "patterns": [
+        "What does the oil temperature problem mean?",
+        "Can you explain the Engine Oil Temperature issue?",
+        "What should I do about the oil temperature sensor problem?",
+        "How can I resolve the oil temperature notification?"
+      ],
+      "responses": [
+        "This indicates a problem with the engine oil temperature sensor.",
+        "Check the sensor for proper functioning and inspect the wiring.",
+        "If the sensor is faulty, it may need to be replaced.",
+        "Consult a mechanic if you're unsure how to proceed."
+      ]
+    },
+    {
+      "tag": "Fuel_Pump_Malfunction",
+      "patterns": [
+        "What does the fuel pump problem mean?",
+        "Can you explain the Fuel Pump Primary Circuit issue?",
+        "What should I do about the fuel pump malfunction?",
+        "How can I fix the fuel pump notification?"
+      ],
+      "responses": [
+        "This indicates a problem with the fuel pump circuit. It may not be supplying fuel properly.",
+        "Check the fuel pump fuse and wiring for any damage.",
+        "If the fuel pump is faulty, it may need to be replaced.",
+        "Consider visiting a mechanic for a thorough inspection."
+      ]
+    },
+    {
+      "tag": "Engine_Overboost_Condition",
+      "patterns": [
+        "What does the overboost condition mean?",
+        "Can you explain the Engine Overboost issue?",
+        "What should I do about the overboost notification?",
+        "How can I fix the overboost problem?"
+      ],
+      "responses": [
+        "This means the engine is producing too much boost pressure, which can be harmful.",
+        "Check the turbocharger and related components for faults.",
+        "Ensure there are no leaks in the intake system.",
+        "If you're unsure, it's best to have a mechanic check it."
+      ]
+    },
+    {
+      "tag": "Engine_Speed_Input_No_Signal",
+      "patterns": [
+        "What does the no signal problem mean?",
+        "Can you explain the Engine Speed Input issue?",
+        "What should I do about the no signal notification?",
+        "How can I resolve the no signal problem?"
+      ],
+      "responses": [
+        "This indicates that the engine speed sensor is not sending a signal.",
+        "Check the sensor and wiring for any damage or disconnections.",
+        "If the sensor is faulty, it may need to be replaced.",
+        "Consider consulting a mechanic for assistance."
+      ]
+    },
+    {
+      "tag": "Engine_Speed_Input_Intermittent",
+      "patterns": [
+        "What does the intermittent signal problem mean?",
+        "Can you explain the Engine Speed Input issue?",
+        "What should I do about the intermittent signal notification?",
+        "How can I fix the intermittent problem?"
+      ],
+      "responses": [
+        "This means there is an inconsistent signal from the engine speed sensor.",
+        "Check the wiring and connections to ensure they are secure.",
+        "If the sensor is faulty, it might need to be replaced.",
+        "Consult a mechanic if you're not comfortable checking it."
+      ]
+    },
+    {
+      "tag": "Rotor_Sensor_Fault",
+      "patterns": [
+        "What does the rotor sensor fault mean?",
+        "Can you explain the Rotor Sensor issue?",
+        "What should I do about the rotor sensor fault?",
+        "How can I fix the rotor sensor problem?"
+      ],
+      "responses": [
+        "This indicates a problem with the rotor sensor, which can affect engine performance.",
+        "Check the sensor for damage and ensure it’s connected properly.",
+        "If the sensor is faulty, it may need to be replaced.",
+        "Consider visiting a mechanic for further diagnosis."
+      ]
+    },
+    {
+      "tag": "Rotor_Control_Fault",
+      "patterns": [
+        "What does the rotor control fault mean?",
+        "Can you explain the Rotor Control issue?",
+        "What should I do about the rotor control fault?",
+        "How can I fix the rotor control problem?"
+      ],
+      "responses": [
+        "This indicates a malfunction in the rotor control system.",
+        "Check the control wiring and connections for any issues.",
+        "If the control system is faulty, it may need to be repaired or replaced.",
+        "Consult a mechanic for assistance with this issue."
+      ]
+    },
+    {
+      "tag": "Fuel_Level_Input_Low",
+      "patterns": [
+        "What does the low fuel level mean?",
+        "Can you explain the Fuel Level Input issue?",
+        "What should I do about the low fuel level notification?",
+        "How can I fix the low fuel level problem?"
+      ],
+      "responses": [
+        "This means the fuel level sensor is reading low. Check your fuel gauge.",
+        "Make sure there’s enough fuel in the tank.",
+        "If the sensor is faulty, it may need to be replaced.",
+        "Consider consulting a mechanic if the problem persists."
+      ]
+    },
+    {
+      "tag": "Oil_Level_Switch_Failure",
+      "patterns": [
+        "What does the oil level switch failure mean?",
+        "Can you explain the Oil Level Switch issue?",
+        "What should I do about the oil level switch fault?",
+        "How can I fix the oil level switch problem?"
+      ],
+      "responses": [
+        "This indicates a failure in the oil level switch, which can affect engine lubrication.",
+        "Check the switch and wiring for any damage.",
+        "If the switch is faulty, it may need to be replaced.",
+        "Consult a mechanic if you're unsure how to proceed."
+      ]
+    },
+    {
+  "tag": "Current_Sense_Circuit_Failure",
+  "patterns": [
+    "What does the current sense circuit failure mean?",
+    "Can you explain the current sense circuit issue?",
+    "What should I do about the current sense circuit fault?",
+    "How can I fix the current sense circuit problem?"
+  ],
+  "responses": [
+    "This indicates a failure in the current sense circuit, which could affect electrical monitoring.",
+    "Check for any damaged wiring or connections in the current sense circuit.",
+    "If the circuit is faulty, the related component might need to be replaced.",
+    "Consult a professional technician if you're unsure about how to handle this issue."
+  ]
+},
+{
+  "tag": "Battery_Heater_Circuit_Failure",
+  "patterns": [
+    "What does the battery heater circuit failure mean?",
+    "Can you explain the battery heater circuit issue?",
+    "What should I do about the battery heater circuit fault?",
+    "How can I fix the battery heater circuit problem?"
+  ],
+  "responses": [
+    "This indicates a failure in the battery heater circuit, which could affect battery temperature regulation.",
+    "Inspect the wiring and components of the battery heater circuit for damage.",
+    "If the heater circuit is faulty, the heating element may need replacement.",
+    "Consult a mechanic or technician for assistance in diagnosing and repairing this fault."
+  ]
+},
+{
+  "tag": "Charging_System_Fault",
+  "patterns": [
+    "What does the charging system fault mean?",
+    "Can you explain the charging system issue?",
+    "What should I do about the charging system failure?",
+    "How can I fix the charging system problem?"
+  ],
+  "responses": [
+    "A charging system fault typically indicates an issue with the alternator or related components.",
+    "Check the alternator, battery, and charging connections for any issues.",
+    "If the fault persists, the alternator or battery may need to be tested or replaced.",
+    "Consult a technician for proper diagnosis and repair of the charging system."
+  ]
+},
+{
+  "tag": "Leakage_Fault",
+  "patterns": [
+    "What does a leakage fault mean?",
+    "Can you explain the leakage issue?",
+    "What should I do about the leakage fault?",
+    "How can I fix the leakage problem?"
+  ],
+  "responses": [
+    "A leakage fault indicates a fluid or gas leak in the system, which can affect performance.",
+    "Inspect the system for any visible leaks or signs of damage.",
+    "If leakage is detected, damaged seals, hoses, or components may need replacement.",
+    "Consult a professional for an accurate diagnosis and to fix the leak."
+  ]
+},
+{
+  "tag": "Speed_Wheel_Sensor_Rear_Center_Coherency_Fault",
+  "patterns": [
+    "What does the speed wheel sensor rear center coherency fault mean?",
+    "Can you explain the speed wheel sensor issue?",
+    "What should I do about the speed wheel sensor rear center fault?",
+    "How can I fix the speed wheel sensor coherency problem?"
+  ],
+  "responses": [
+    "This fault indicates a problem with the rear center speed wheel sensor's data coherence.",
+    "Check the sensor and wiring for any damage or poor connections.",
+    "If the sensor is faulty, it may need replacement or recalibration.",
+    "Consult a technician if the sensor's data coherence issue persists."
+  ]
+}
+
+  ]
+}
