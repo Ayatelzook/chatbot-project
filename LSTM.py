@@ -1,90 +1,51 @@
-import pyttsx3  # For text-to-speech conversion
 import numpy as np
 import json
-from sklearn.feature_extraction.text import CountVectorizer
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, LSTM, Dropout
-from sklearn.preprocessing import LabelEncoder
-import random
 import pickle
+from tensorflow.keras.models import load_model
+import random
+import subprocess  # For calling Flite from the system
 
-# Initialize the speech engine
-engine = pyttsx3.init()
-engine.setProperty('rate', 150)  # Speed of speech
-engine.setProperty('volume', 1)  # Volume level (0.0 to 1.0)
-
-
-# Function to speak the text
+# Function to speak the text using Flite
 def speak(text):
-    """Speak the given text using the pyttsx3 engine."""
-    engine.say(text)
-    engine.runAndWait()
+    """Speak the given text using the Flite command."""
+    try:
+        # Call Flite via subprocess
+        subprocess.run(["flite", "-t", text], check=True)
+    except FileNotFoundError:
+        print("Error: 'flite' not found. Please ensure it is installed on the system.")
+    except Exception as e:
+        print(f"Error: {e}")
 
+# Function to load the necessary files (model, vectorizer, label encoder, and responses)
+def load_files():
+    # Load the trained model
+    model = load_model("chatbot_model_LSTM.keras")
 
-# Function to preprocess and reshape the JSON data
-def preprocess_data(json_file):
-    # Load the JSON data
-    with open(json_file, 'r') as f:
+    # Load the vectorizer and label encoder
+    with open('vectorizer_LSTM.pkl', 'rb') as f:
+        vectorizer = pickle.load(f)
+
+    with open('label_encoder_LSTM.pkl', 'rb') as f:
+        label_encoder = pickle.load(f)
+
+    # Load the responses from the JSON file
+    with open('intents.json', 'r') as f:
         data = json.load(f)
 
-    if isinstance(data, dict) and 'intents' in data:
-        intents = data['intents']
-        patterns = []
-        tags = []
-        responses = {}
-        for intent in intents:
-            for pattern in intent['patterns']:
-                patterns.append(pattern)
-                tags.append(intent['tag'])
-            responses[intent['tag']] = intent['responses']
+    responses = {}
+    for intent in data['intents']:
+        responses[intent['tag']] = intent['responses']
 
-        vectorizer = CountVectorizer()
-        X = vectorizer.fit_transform(patterns).toarray()
-        label_encoder = LabelEncoder()
-        y = label_encoder.fit_transform(tags)
+    return model, vectorizer, label_encoder, responses
 
-    else:
-        raise ValueError("Expected data to be a dictionary with 'intents' key.")
-
-    X = X.reshape((X.shape[0], 1, X.shape[1]))
-    return X, np.array(y), label_encoder, vectorizer, responses
-
-
-# Preprocess data (using 'intents.json')
-X, y, label_encoder, vectorizer, responses = preprocess_data('intents.json')
-
-# Build the model
-model = Sequential()
-model.add(LSTM(128, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
-model.add(Dropout(0.5))
-model.add(LSTM(64, return_sequences=False))
-model.add(Dropout(0.5))
-model.add(Dense(64, activation='relu'))
-model.add(Dense(len(np.unique(y)), activation='softmax'))
-
-# Compile the model
-model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
-# Train the model
-model.fit(X, y, epochs=100, batch_size=5, verbose=1)
-
-# Save the trained model
-model.save("chatbot_model_LSTM.keras")
-
-# Save vectorizer and label encoder for later use
-with open('vectorizer_LSTM.pkl', 'wb') as f:
-    pickle.dump(vectorizer, f)
-
-with open('label_encoder_LSTM.pkl', 'wb') as f:
-    pickle.dump(label_encoder, f)
-
+# Load the files (model, vectorizer, label encoder, and responses)
+model, vectorizer, label_encoder, responses = load_files()
 
 # Function to process user input message
 def preprocess_input(message):
     input_vector = vectorizer.transform([message]).toarray()
     input_vector = input_vector.reshape(1, 1, input_vector.shape[1])
     return input_vector
-
 
 # Store previous interactions
 conversation_history = []
